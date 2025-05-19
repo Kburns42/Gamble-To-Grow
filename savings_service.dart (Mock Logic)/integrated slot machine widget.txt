@@ -1,0 +1,9 @@
+SlotMachine(
+  onResult: (isWin) {
+    if (!isWin) {
+      savingsService.simulateLossContribution();
+    } else {
+      // Reward tokens here
+    }
+  },
+)

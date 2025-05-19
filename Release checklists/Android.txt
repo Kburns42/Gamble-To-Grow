@@ -1,0 +1,13 @@
+✅ Android
+ Set up android/app/src/main/AndroidManifest.xml (add permissions, app name)
+
+ Update android/app/build.gradle (versionCode/versionName)
+
+ Create app icon: use https://appicon.co
+
+ Build release APK:
+
+bash
+Copy
+flutter build apk --release
+ Upload to Play Console (internal testing or alpha)

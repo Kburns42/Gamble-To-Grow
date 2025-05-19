@@ -1,0 +1,17 @@
+import 'dart:math';
+
+class SavingsService {
+  double _totalSavings = 0.0;
+
+  double get totalSavings => _totalSavings;
+
+  void simulateLossContribution() {
+    double amount = 1 + Random().nextDouble() * 4; // $1–$5
+    _totalSavings += amount;
+    print('Saved \$${amount.toStringAsFixed(2)}. Total savings: \$${_totalSavings.toStringAsFixed(2)}');
+  }
+
+  void reset() {
+    _totalSavings = 0.0;
+  }
+}

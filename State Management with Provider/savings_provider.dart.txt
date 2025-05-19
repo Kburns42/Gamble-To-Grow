@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+
+class SavingsProvider extends ChangeNotifier {
+  double _savings = 0.0;
+
+  double get savings => _savings;
+
+  void addSavings(double amount) {
+    _savings += amount;
+    notifyListeners();
+  }
+
+  void reset() {
+    _savings = 0.0;
+    notifyListeners();
+  }
+}

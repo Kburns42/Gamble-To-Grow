@@ -1,0 +1,18 @@
+If you haven’t yet:
+
+Go to Firebase Console
+
+Create a new project (no Google Analytics needed)
+
+Add iOS/Android/Web apps (get google-services.json and/or GoogleService-Info.plist)
+
+Enable Authentication (Anonymous + Email)
+
+Set up Cloud Firestore
+
+Then:
+
+bash
+Copy
+flutterfire configure
+Follow prompts to auto-link your Firebase project.

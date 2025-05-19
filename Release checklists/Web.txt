@@ -1,0 +1,13 @@
+✅ Web
+ Run: flutter build web
+
+ Host on:
+
+Firebase Hosting (easy if using Firebase backend)
+
+GitHub Pages
+
+Netlify/Vercel (drag & drop build/web/)
+
+ Add a custom domain and SSL if needed
+

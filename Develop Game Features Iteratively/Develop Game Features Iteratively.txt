@@ -1,0 +1,15 @@
+Suggested Sprint Goals:
+
+Sprint 1: Slot game + token system + save logic
+
+Sprint 2: Firebase auth + Firestore sync
+
+Sprint 3: Token store + unlockables
+
+Sprint 4: Profile screen + Provider state
+
+Sprint 5: Responsive UI for web + mobile polish
+
+Sprint 6: Integrate mock Plaid backend
+
+Use ChatGPT & GitHub Copilot throughout to auto-generate/complete code.

@@ -1,0 +1,4 @@
+dependencies:
+  firebase_core: ^2.24.0
+  firebase_auth: ^4.16.0
+  cloud_firestore: ^4.13.0

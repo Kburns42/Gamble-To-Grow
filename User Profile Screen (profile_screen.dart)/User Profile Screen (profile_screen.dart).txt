@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+import '../services/token_service.dart';
+import '../services/savings_service.dart';
+
+final TokenService tokenService = TokenService();
+final SavingsService savingsService = SavingsService();
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Your Profile')),
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Total Tokens: ${tokenService.currentTokens}', style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 12),
+            Text('Total Saved: \$${savingsService.totalSavings.toStringAsFixed(2)}', style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () {
+                tokenService.reset();
+                savingsService.reset();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Profile data reset.')),
+                );
+              },
+              child: const Text('Reset All Data'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

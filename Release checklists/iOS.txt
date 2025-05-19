@@ -1,0 +1,14 @@
+✅ iOS
+ Install Xcode and CocoaPods (pod install)
+
+ Set Bundle ID in ios/Runner.xcodeproj
+
+ Add app icons
+
+ Test on real device via TestFlight
+
+ Build for release:
+
+bash
+Copy
+flutter build ios --release

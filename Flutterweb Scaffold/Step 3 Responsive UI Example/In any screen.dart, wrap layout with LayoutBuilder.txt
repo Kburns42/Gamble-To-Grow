@@ -1,0 +1,9 @@
+LayoutBuilder(
+  builder: (context, constraints) {
+    if (constraints.maxWidth > 600) {
+      return DesktopLayout(); // for tablets/desktops
+    } else {
+      return MobileLayout(); // default mobile layout
+    }
+  },
+)

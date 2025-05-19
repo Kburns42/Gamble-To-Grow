@@ -1,0 +1,14 @@
+You can launch web faster than mobile. Choose a host:
+
+Vercel (easy, great UI)
+
+Netlify (drag-and-drop deploy)
+
+Firebase Hosting (best if you’re already using Firebase)
+
+To build:
+
+bash
+Copy
+flutter build web
+Then drag /build/web to host.

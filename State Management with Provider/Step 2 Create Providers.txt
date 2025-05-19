@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+
+class TokenProvider extends ChangeNotifier {
+  int _tokens = 0;
+
+  int get tokens => _tokens;
+
+  void addTokens(int amount) {
+    _tokens += amount;
+    notifyListeners();
+  }
+
+  bool spendTokens(int amount) {
+    if (_tokens >= amount) {
+      _tokens -= amount;
+      notifyListeners();
+      return true;
+    }
+    return false;
+  }
+
+  void reset() {
+    _tokens = 0;
+    notifyListeners();
+  }
+}

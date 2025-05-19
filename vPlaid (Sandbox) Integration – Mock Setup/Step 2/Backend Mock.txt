@@ -1,0 +1,14 @@
+// server.js (Mock Plaid Endpoint)
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.use(express.json());
+
+app.post('/api/plaid/link_token', (req, res) => {
+  res.json({ link_token: 'mock-link-token-123' });
+});
+
+app.listen(port, () => {
+  console.log(`Plaid mock server listening at http://localhost:${port}`);
+});

@@ -1,0 +1,25 @@
+class TokenService {
+  int _tokens = 0;
+
+  int get currentTokens => _tokens;
+
+  void rewardTokens(int amount) {
+    _tokens += amount;
+    print('🎉 Earned $amount tokens! Total: $_tokens');
+  }
+
+  bool spendTokens(int amount) {
+    if (_tokens >= amount) {
+      _tokens -= amount;
+      print('🛍️ Spent $amount tokens. Remaining: $_tokens');
+      return true;
+    } else {
+      print('❌ Not enough tokens!');
+      return false;
+    }
+  }
+
+  void reset() {
+    _tokens = 0;
+  }
+}

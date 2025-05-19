@@ -1,0 +1,12 @@
+Plaid can connect bank accounts (even in sandbox mode) and simulate deposits/withdrawals. You'd use this to show:
+
+Verified savings
+
+Transaction logs
+
+Since Plaid has no official Flutter SDK, you’ll use:
+
+Backend (Node.js/Python) for Plaid token exchange
+
+Frontend Flutter app makes HTTP requests to backend
+

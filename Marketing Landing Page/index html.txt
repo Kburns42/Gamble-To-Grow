@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gamble to Grow</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="hero">
+    <h1>Gamble to Grow</h1>
+    <p>Play games, win tokens, and save money while you gamble. The only casino where losing helps you build wealth.</p>
+    <a href="#download" class="btn">Join the Beta</a>
+  </section>
+
+  <section class="features">
+    <div>
+      <h2>How It Works</h2>
+      <ul>
+        <li>🎰 Spin slots, win tokens, or lose and save into a real account</li>
+        <li>💰 Use winnings to unlock games, badges, or even cash rewards</li>
+        <li>📈 Track your growth and habits with financial insights</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="download" class="download">
+    <h2>Get the App</h2>
+    <p>Beta available on Android, iOS, and Web</p>
+    <a href="#" class="btn">Download Now</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Gamble to Grow. All rights reserved.</p>
+  </footer>
+</body>
+</html>

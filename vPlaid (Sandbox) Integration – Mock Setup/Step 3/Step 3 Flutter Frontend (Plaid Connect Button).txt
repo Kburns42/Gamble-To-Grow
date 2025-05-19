@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+class PlaidLinkScreen extends StatelessWidget {
+  const PlaidLinkScreen({super.key});
+
+  Future<void> getLinkToken() async {
+    final response = await http.post(
+      Uri.parse('http://localhost:3000/api/plaid/link_token'),
+    );
+    final data = jsonDecode(response.body);
+    print('Link Token: ${data['link_token']}');
+    // In real app, load Plaid SDK or WebView with token
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Connect Bank Account')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: getLinkToken,
+          child: const Text('Connect with Plaid'),
+        ),
+      ),
+    );
+  }
+}

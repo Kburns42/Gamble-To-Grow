@@ -1,0 +1,19 @@
+Tools to Install:
+Flutter SDK
+
+Android Studio or Visual Studio Code (with Flutter & Dart plugins)
+
+Node.js (for future backend/Plaid API work)
+
+Git (for version control)
+
+Actions:
+Unzip the GitHub project or clone from your repo if hosted
+
+Run:
+
+bash
+Copy
+flutter pub get
+flutter run
+Test your app on an emulator or Chrome (for web).

@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+import '../services/token_service.dart';
+
+final TokenService tokenService = TokenService(); // Ideally injected
+
+class StoreScreen extends StatelessWidget {
+  const StoreScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final items = [
+      {'name': 'New Slot Skin', 'price': 50},
+      {'name': 'Theme Pack', 'price': 100},
+      {'name': 'Bonus Spins', 'price': 30},
+    ];
+
+    return Scaffold(
+      appBar: AppBar(title: const Text('Token Store')),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Text('Tokens: ${tokenService.currentTokens}', style: const TextStyle(fontSize: 18)),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                final item = items[index];
+                return ListTile(
+                  title: Text(item['name']!),
+                  trailing: Text('${item['price']} 🪙'),
+                  onTap: () {
+                    final success = tokenService.spendTokens(item['price'] as int);
+                    final snackBar = SnackBar(
+                      content: Text(success
+                          ? 'Purchased ${item['name']}!'
+                          : 'Not enough tokens.'),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  },
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

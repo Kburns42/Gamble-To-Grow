@@ -1,0 +1,7 @@
+onResult: (isWin) {
+  if (isWin) {
+    tokenService.rewardTokens(10);
+  } else {
+    savingsService.simulateLossContribution();
+  }
+}

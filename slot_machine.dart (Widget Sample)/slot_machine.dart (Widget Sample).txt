@@ -1,0 +1,49 @@
+import 'dart:math';
+import 'package:flutter/material.dart';
+
+class SlotMachine extends StatefulWidget {
+  final void Function(bool isWin) onResult;
+
+  const SlotMachine({super.key, required this.onResult});
+
+  @override
+  State<SlotMachine> createState() => _SlotMachineState();
+}
+
+class _SlotMachineState extends State<SlotMachine> {
+  final List<String> _symbols = ['🍒', '🍋', '🔔'];
+  late List<String> _slots;
+
+  @override
+  void initState() {
+    super.initState();
+    _slots = List.generate(3, (_) => _symbols[0]);
+  }
+
+  void _spin() {
+    final rand = Random();
+    setState(() {
+      _slots = List.generate(3, (_) => _symbols[rand.nextInt(_symbols.length)]);
+    });
+
+    bool isWin = _slots.every((s) => s == _slots.first);
+    widget.onResult(isWin);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          _slots.join(' | '),
+          style: const TextStyle(fontSize: 32),
+        ),
+        const SizedBox(height: 16),
+        ElevatedButton(
+          onPressed: _spin,
+          child: const Text('Spin'),
+        ),
+      ],
+    );
+  }
+}
